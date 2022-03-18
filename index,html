@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+      .searchBox {
+        margin: 20px 0;
+      }
+
+      .listBox {
+        max-width: 500px;
+      }
+
+      .listInner {
+        background-color: #dedede;
+        margin: 10px 5px;
+        padding: 4px;
+      }
+
+      .subtitlename {
+        font-weight: bold;
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div class="searchBox">
+      <label>수도: <input type="text" id="search" onkeyup="filter()" placeholder="수도를 검색하세요." /></label>
+
+    </div>
+
+    <div class="listBox">
+      <div class="listInner">
+        <a class="subtitlename" href="/subtitle/pokemonmovie2020.ass" download>포켓몬 정글의 아이 코코</a>
+        <a class="subtitlemaker"> 만나자마자</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">Argentina</a>
+        <a class="subtitlemaker">Buenos Aires</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">Austria</a>
+        <a class="subtitlemaker">Vienna</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">Bahamas</a>
+        <a class="subtitlemaker">Nassau</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">Belgium</a>
+        <a class="subtitlemaker">Brussels</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">Canada</a>
+        <a class="subtitlemaker">Ottawa</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">Chile</a>
+        <a class="subtitlemaker">Santiago</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">China</a>
+        <a class="subtitlemaker">Beijing</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">Cuba</a>
+        <a class="subtitlemaker">Havana</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">Czechia</a>
+        <a class="subtitlemaker">Prague</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">Denmark</a>
+        <a class="subtitlemaker">Copenhagen</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">Ecuador</a>
+        <a class="subtitlemaker">Quito</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">Egypt</a>
+        <a class="subtitlemaker">Cairo</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">Finland</a>
+        <a class="subtitlemaker">Helsinki</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">France</a>
+        <a class="subtitlemaker">Paris</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">Germany</a>
+        <a class="subtitlemaker">Berlin</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">Greece</a>
+        <a class="subtitlemaker">Athens</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">Hungary</a>
+        <a class="subtitlemaker">Budapest</a>
+      </div>
+      <div class="listInner">
+        <a class="subtitlename">India</a>
+        <a class="subtitlemaker"> New Delhi</a>
+      </div>
+    </div>
+
+    <script>
+      function filter() {
+        let search = document.getElementById("search").value.toLowerCase();
+        let listInner = document.getElementsByClassName("listInner");
+
+        for (let i = 0; i < listInner.length; i++) {
+          subtitlemaker = listInner[i].getElementsByClassName("subtitlemaker");
+          subtitlename = listInner[i].getElementsByClassName("subtitlename");
+          if (subtitlemaker[0].innerHTML.toLowerCase().indexOf(search) != -1 ||
+            subtitlename[0].innerHTML.toLowerCase().indexOf(search) != -1
+          ) {
+            listInner[i].style.display = "flex"
+          } else {
+            listInner[i].style.display = "none"
+          }
+        }
+      }
+
+    </script>
+    <a href="" download>다운로드하려면 여기를 클릭하십시오.</a>
+  </body>
+
+</html>
